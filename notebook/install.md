@@ -6,20 +6,21 @@ https://canonical.com/lxd/install
 https://documentation.ubuntu.com/lxd/latest/installing  
 https://documentation.ubuntu.com/lxd/latest/howto/initialize
 
-https://www.youtube.com/watch?v=7SOTKSMpFQA&list=PLn6POgpklwWp9TsSy2yg-dPfpuAdUe276
+https://www.youtube.com/watch?v=A9FKc65os6Y&list=PLn6POgpklwWp9TsSy2yg-dPfpuAdUe276  
+https://www.youtube.com/watch?v=zmPmL0z8QW4&list=PLn6POgpklwWp9TsSy2yg-dPfpuAdUe276
 
-## INSTALL - LXD 6 - UBUNTU 24
+## INSTALL - LXD 5 - UBUNTU 24
 
-[![LXD](img/lxd.webp "LXD")](https://canonical.com/lxd)6
+[![LXD](img/lxd.webp "LXD")](https://canonical.com/lxd)5
 [![Ubuntu](img/ubuntu.webp "Ubuntu")](https://ubuntu.com)24
 
 ```bash
-$ sudo snap install --channel=latest/stable lxd
+$ sudo snap install lxd
 |...|
-lxd 6.6-2dcd56e from Canonical✓ installed
+lxd (5.21/stable) 5.21.4-de343be from Canonical✓ installed
 
 $ lxd version
-6.6
+5.21.4 LTS
 
 $ cat <<EOF | lxd init --preseed
 cluster: null
@@ -58,8 +59,11 @@ storage_volumes: []
 EOF
 
 $ lxc version
-Client version: 6.6
-Server version: 6.6
+To start your first container, try: lxc launch ubuntu:24.04
+Or for a virtual machine: lxc launch ubuntu:24.04 --vm
+
+Client version: 5.21.4 LTS
+Server version: 5.21.4 LTS
 
 $ ip address show lxdbr0
 5: lxdbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen
@@ -107,7 +111,7 @@ querade
     ip6 daddr fd39:d8bd:967c:bb6f::1 tcp dport 53 drop
     ip6 daddr fd39:d8bd:967c:bb6f::1 udp dport 53 drop
     iifname "lxdbr0" icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter
-    -problem, nd-router-solicit, nd-neighbor-solicit, nd-neighbor-advert, mld2-listener-report } accept
+-problem, nd-router-solicit, nd-neighbor-solicit, nd-neighbor-advert, mld2-listener-report } accept
     iifname "lxdbr0" udp dport 547 accept
   }
 
