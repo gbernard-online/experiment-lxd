@@ -70,6 +70,14 @@ $ ip address show lxdbr0
     inet6 fd39:d8bd:967c:bb6f::1/64 scope global
        valid_lft forever preferred_lft forever
 
+$ sudo nft list tables
+table ip nat
+table ip filter
+table ip6 nat
+table ip6 filter
+table inet lxd
+
+$ sudo nft list table inet lxd | expand --tabs=2
 table inet lxd {
   chain pstrt.lxdbr0 {
     type nat hook postrouting priority srcnat; policy accept;
