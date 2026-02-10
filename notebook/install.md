@@ -2,6 +2,7 @@
 
 ## REFERENCES
 
+https://snapcraft.io/lxd  
 https://canonical.com/lxd/install  
 https://documentation.ubuntu.com/lxd/latest/installing  
 https://documentation.ubuntu.com/lxd/latest/howto/initialize
