@@ -6,12 +6,15 @@
 
 [Install](notebook/install.md)
 
+[Practice #1](notebook/practice1.md)
+
 [Purge](notebook/purge.md)
 
 ## REFERENCES
 
 https://canonical.com/lxd  
-https://documentation.ubuntu.com/lxd/latest
+https://documentation.ubuntu.com/lxd/latest  
+https://documentation.ubuntu.com/lxd/latest/reference/manpages/lxc
 
 https://www.youtube.com/playlist?list=PLn6POgpklwWp9TsSy2yg-dPfpuAdUe276
 
