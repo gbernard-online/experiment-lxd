@@ -21,24 +21,18 @@ lxd (5.21/stable) 5.21.4-de343be from Canonical✓ installed
 $ lxd version
 5.21.4 LTS
 
+$ sudo snap set lxd ui.enable=false
+
 $ cat <<EOF | lxd init --preseed
-cluster: null
-config:
-  core.https_address: '[::]:8443'
 networks:
   - config:
       ipv4.address: 172.18.0.1/24
       ipv4.nat: "true"
       ipv6.address: fd39:d8bd:967c:bb6f::1/64
       ipv6.nat: "true"
-    description: ""
     name: lxdbr0
-    type: ""
-    project: default
 profiles:
-  - config: {}
-    description: ""
-    devices:
+  - devices:
       eth0:
         name: eth0
         network: lxdbr0
@@ -48,13 +42,9 @@ profiles:
         pool: default
         type: disk
     name: default
-projects: []
 storage_pools:
-  - config: {}
-    description: ""
+  - driver: dir
     name: default
-    driver: dir
-storage_volumes: []
 EOF
 
 $ lxc version
