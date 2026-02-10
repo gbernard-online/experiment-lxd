@@ -54,6 +54,55 @@ storage_pools:
     driver: dir
 storage_volumes: []
 EOF
+
+$ ip address show lxdbr0
+5: lxdbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen
+1000
+    link/ether 00:16:3e:d4:fa:2d brd ff:ff:ff:ff:ff:ff
+    inet 10.249.251.1/24 scope global lxdbr0
+       valid_lft forever preferred_lft forever
+    inet6 fd42:296f:9438:429c::1/64 scope global
+       valid_lft forever preferred_lft forever
+
+$ sudo nft list table inet lxd | expand --tabs=2
+table inet lxd {
+  chain pstrt.lxdbr0 {
+    type nat hook postrouting priority srcnat; policy accept;
+    ip saddr 10.249.251.0/24 ip daddr != 10.249.251.0/24 oifname != "lxdbr0" masquerade
+querade
+  }
+
+  chain fwd.lxdbr0 {
+    type filter hook forward priority filter; policy accept;
+    ip version 4 oifname "lxdbr0" accept
+    ip version 4 iifname "lxdbr0" accept
+    ip6 version 6 oifname "lxdbr0" accept
+    ip6 version 6 iifname "lxdbr0" accept
+  }
+
+  chain in.lxdbr0 {
+    type filter hook input priority filter; policy accept;
+    iifname "lxdbr0" tcp dport 53 accept
+    iifname "lxdbr0" udp dport 53 accept
+    iifname "lo" tcp dport 53 accept
+    iifname "lo" udp dport 53 accept
+    ip daddr 10.249.251.1 tcp dport 53 drop
+    ip daddr 10.249.251.1 udp dport 53 drop
+    iifname "lxdbr0" icmp type { destination-unreachable, time-exceeded, parameter-problem } accept
+    iifname "lxdbr0" udp dport 67 accept
+    ip6 daddr fd42:296f:9438:429c::1 tcp dport 53 drop
+    ip6 daddr fd42:296f:9438:429c::1 udp dport 53 drop
+    iifname "lxdbr0" icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter
+-problem, nd-router-solicit, nd-neighbor-solicit, nd-neighbor-advert, mld2-listener-report } accept
+    iifname "lxdbr0" udp dport 547 accept
+  }
+
+  chain out.lxdbr0 {
+    type filter hook output priority filter; policy accept;
+    oifname "lxdbr0" tcp sport 53 accept
+    oifname "lxdbr0" udp sport 53 accept
+  }
+}
 ```
 
 &nbsp;
