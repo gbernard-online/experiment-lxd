@@ -6,8 +6,7 @@ https://canonical.com/lxd/install
 https://documentation.ubuntu.com/lxd/latest/installing  
 https://documentation.ubuntu.com/lxd/latest/howto/initialize
 
-https://www.youtube.com/watch?v=A9FKc65os6Y&list=PLn6POgpklwWp9TsSy2yg-dPfpuAdUe276  
-https://www.youtube.com/watch?v=zmPmL0z8QW4&list=PLn6POgpklwWp9TsSy2yg-dPfpuAdUe276
+https://www.youtube.com/watch?v=7SOTKSMpFQA&list=PLn6POgpklwWp9TsSy2yg-dPfpuAdUe276
 
 ## INSTALL - LXD 5 - UBUNTU 24
 
