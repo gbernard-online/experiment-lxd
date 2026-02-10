@@ -1,8 +1,8 @@
 # EXPERIMENT LXD
 
-## PURGE - LXD 6 - UBUNTU 24
+## PURGE - LXD 5 - UBUNTU 24
 
-[![LXD](img/lxd.webp "LXD")](https://canonical.com/lxd)6
+[![LXD](img/lxd.webp "LXD")](https://canonical.com/lxd)5
 [![Ubuntu](img/ubuntu.webp "Ubuntu")](https://ubuntu.com)24
 
 ```bash
