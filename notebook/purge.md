@@ -6,7 +6,7 @@
 [![Ubuntu](img/ubuntu.webp "Ubuntu")](https://ubuntu.com)24
 
 ```bash
-$ sudo snap remove lxd
+$ sudo snap remove --purge lxd
 lxd removed
 ```
 
