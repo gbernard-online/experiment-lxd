@@ -3,6 +3,16 @@
 .prettierrc
 README.md
 lxd.webp
+notebook/cluster/NOTES.md
+notebook/cluster/ex1.png
+notebook/cluster/ex2.png
+notebook/cluster/ex3.png
+notebook/cluster/ex4.png
+notebook/cluster/ex5.png
+notebook/cluster/ex6.png
+notebook/cluster/ex7.png
+notebook/cluster/ex8.png
+notebook/cluster/ex9.png
 notebook/img/github.webp
 notebook/img/linkedin.webp
 notebook/img/lxd.webp
