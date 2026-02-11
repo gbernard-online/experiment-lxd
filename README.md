@@ -1,5 +1,7 @@
 # EXPERIMENT LXD
 
+## DRAFT : WIP
+
 [![LXD](lxd.webp "LXD")](https://canonical.com/lxd)
 
 ## TABLE OF CONTENTS
@@ -30,4 +32,4 @@ https://www.youtube.com/playlist?list=PLn6POgpklwWp9TsSy2yg-dPfpuAdUe276
 
 [MIT License](https://opensource.org/license/mit)
 
-`c[_] 2025`
+`c[_] 2026`
